@@ -3,11 +3,17 @@ package com.kreitek.pets;
 import com.kreitek.pets.controllers.CatController;
 import com.kreitek.pets.controllers.ControllerFactory;
 import com.kreitek.pets.controllers.DogController;
+import com.kreitek.pets.controllers.Logger;
+
 import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 
 public class PetApp {
 
     // TODO Logger declaration
+
+     Logger logger = Logger.getInstance();
+
 
     public static void main (String[] args) {
         ControllerFactory controllerFactory = new ControllerFactory();
@@ -58,7 +64,10 @@ public class PetApp {
                 System.out.println("Bad command error");
             }
         }
-        System.out.println("Pet app has been ended"); // TODO Logger
+        //System.out.println("Pet app has been ended" ); // TODO Logger
+            logger.debug();
+
+
     }
 
     private static String getGetParam(String[] commandArgs) throws BadCommandException {

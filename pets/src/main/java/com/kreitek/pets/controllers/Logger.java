@@ -1,11 +1,9 @@
 package com.kreitek.pets.controllers;
 
-import com.kreitek.pets.domain.Dog;
-import com.kreitek.pets.infraestructure.bd.DbService;
-
 public class Logger {
 
     private static volatile Logger instance = null;
+    private int contador=0;
 
     private Logger() {
         if (instance != null) {
@@ -22,15 +20,15 @@ public class Logger {
         }
         return instance;
     }
-    public void debug ( String contador){
+    public void debug(String texto){
 
-        //int contador = Integer.parseInt((ExecutePut)+1);
 
-        int invremento = Integer.parseInt(contador)+1;
+       contador++;
 
-        System.out.println( "[debug]"  +  invremento + contador );
-        //"[degug][contador]  - " al parámetro de entrada, como en los siguientes ejemplos:
+       System.out.println( "[debug]"  + "[" + contador + "] - " + texto );
+
 
     }
+
 
 }

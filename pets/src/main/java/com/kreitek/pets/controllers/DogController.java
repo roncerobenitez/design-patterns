@@ -11,6 +11,7 @@ public class DogController implements Controller {
 
     // TODO Logger declaration
     Logger logger = Logger.getInstance();
+
     public String executePut(String petName, String ownerName, String telephone) {
         logger.debug("DogController.executePut " + petName + "," + ownerName + "," + telephone);
         Dog dog = new Dog(petName, ownerName, telephone);
